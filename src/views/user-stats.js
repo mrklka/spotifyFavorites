@@ -13,23 +13,73 @@ export default class UserStats extends Component {
         return (
             <div className="section user_stats" id="userStats">
                 <h1 id="user_stats_title">{this.props.currentuser}'s <br></br> Favorite Artists</h1>
-                {this.artist ?
+                {artist ?
                     <div>
-                        <ul>
-                            {
-                                this.artist.map(artist =>
-                                    <li>{artist.name}</li>
+                        <div className="container ">
+                            <div className="row" id="user_stats_main_row" >
+                                <div className="col" id="user_stats_main_column" >
 
-                                )
-                            }
-                        </ul>
+                                    <div className="container">
+                                        <div className="row">
+                                            {artist[0] ?
+                                                <div className="col-md">
+                                                    <h1 id="user_stats_artist_text">#1 Artist</h1>
+
+                                                    <img id="user_stats_favorite_img" alt="favorite artsts" src={artist[0].imageUrl}></img>
+
+                                                    <h2 id="user_stats_artist_name">{artist[0].name}</h2>
+                                                </div>
+                                                : ' '}
+
+
+                                            <div id="other_artist_col" className="col-md">
+                                                <h1 id="user_stats_artist_text">Other Artists</h1>
+                                                {artist[1] ?
+                                                    <div id="other_artist_container" className="row">
+                                                        <img id="user_stats_other_artist_img" alt="favorite artsts" src={artist[1].imageUrl}></img>
+                                                        <h2 id="user_stats_other_artist_name">{artist[1].name}</h2>
+                                                    </div>
+                                                    : ' '}
+                                                {artist[2] ?
+                                                    <div id="other_artist_container" className="row">
+                                                        <img id="user_stats_other_artist_img" alt="favorite artsts" src={artist[2].imageUrl}></img>
+                                                        <h2 id="user_stats_other_artist_name">{artist[2].name}</h2>
+                                                    </div>
+                                                    : ' '}
+                                                {artist[3] ?
+                                                    <div id="other_artist_container" className="row">
+                                                        <img id="user_stats_other_artist_img" alt="favorite artsts" src={artist[3].imageUrl}></img>
+                                                        <h2 id="user_stats_other_artist_name">{artist[3].name}</h2>
+                                                    </div>
+
+                                                    : ' '}
+                                                {artist[4] ?
+                                                    <div id="other_artist_container" className="row">
+                                                        <img id="user_stats_other_artist_img" alt="favorite artsts" src={artist[4].imageUrl}></img>
+                                                        <h2 id="user_stats_other_artist_name">{artist[4].name}</h2>
+                                                    </div>
+                                                    : ' '}
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+
                     </div>
                     :
                     <div>'Loading...'
                     </div>
 
                 }
-                <div className="container ">
+                {/* <div className="container ">
                     <div className="row" id="user_stats_main_row" >
                         <div className="col" id="user_stats_main_column" >
 
@@ -70,7 +120,7 @@ export default class UserStats extends Component {
 
 
                     </div>
-                </div>
+                </div> */}
             </div >
 
         )
