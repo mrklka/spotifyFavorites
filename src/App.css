@@ -1,0 +1,242 @@
+
+* {
+  font-family: 'Montserrat', sans-serif !important;
+font-family: 'Roboto', sans-serif !important;
+}
+
+
+.App {
+  text-align: center;
+}
+.navbar {
+  background-color: black !important;
+
+}
+
+#navbar-text {
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 600;
+  width: 100%;
+  font-size: 25px;
+  margin: 0 auto;
+  left: 0;
+  color: white;
+  min-height: 40px;
+
+}
+
+.jumbotron {
+  background-image: url('../src/img/jumbotron_bg.jpg');
+  background-size: cover;
+  height: 100%;
+  min-height: 80vh;
+  color: white;
+
+
+}
+
+
+.jumbotron h1 {
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 800;
+}
+
+#jumbotron_sublead {
+  font-size: 50px;
+  padding-top: 25vh;
+
+}
+
+#jumbotron_lead {
+  font-size: 70px;
+
+}
+
+#jumbotron_description {
+  font-size: 25px;
+  padding-top: 15px;
+  font-family: 'Montserrat', sans-serif !important;
+
+  font-weight: 600;
+
+
+}
+
+.login-button {
+  margin-top: 70px;
+  border: 0;
+  font-size: 1.2rem;
+  text-align: center;
+  color: #fff;
+  line-height: 3.0;
+  padding: 0 40px;
+  border-radius: 30px;
+  background-color:#4db756;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: 0.7s;
+
+}
+
+.login-button:hover {
+  background-color: #59d461;
+}
+
+#proceed-botton {
+  margin-top: 20vh;
+  height: 70px;
+  width: auto;
+  transition: 0.5s;
+
+}
+
+#proceed-botton:hover {
+  transform: scale(1.2);
+}
+
+
+/* User Stats Styling */
+
+
+.user_stats {
+  min-height: 100vh;
+  background-color: black;
+  color: white;
+
+
+
+}
+
+#user_stats_title {
+  padding-top: 5vh;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 800;
+  font-size: 60px;
+  margin: 0 auto;
+}
+
+
+#user_stats_artist_cont {
+  height: 250px;
+  width: 250px;
+  margin: 0 auto;
+  background-image: url('../src/img/exalb.jpg');
+  background-repeat: round;
+  margin-bottom: 30px;
+
+}
+
+
+#user_stats_main_row {
+  margin-top: 5vh;
+}
+
+
+
+
+#user_stats_artist_name {
+  margin-top: 30px;
+  font-size: 30px;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 300;
+  text-shadow: 2px 2px 1px #000000;
+}
+
+#user_stats_artist_text {
+  font-size: 50px;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 600;
+  text-shadow: 2px 2px 1px #000000;
+  padding-bottom: 50px;
+  padding-top: 20px;
+}
+
+#user_stats_favorite_img {
+  width: 500px;
+  height: auto;
+}
+
+#user_stats_album_title{
+  font-size: 30px;
+  font-family: 'Roboto', sans-serif !important;
+  font-weight: 500;
+  text-shadow: 2px 2px 1px #000000;
+
+}
+
+#other_artist_container {
+  height: 120px;
+  width: 400px;
+  background-color: black;
+  margin: 0 auto;
+  margin-bottom: 30px; 
+}
+
+#user_stats_other_artist_img {
+  max-width: 120px;
+  height: auto;
+}
+
+#user_stats_other_artist_name {
+  padding-left: 20px;
+  padding-top: 35px;
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 600;
+  text-shadow: 2px 2px 1px #000000;
+  width: 250px;
+  overflow-wrap: break-word;
+  text-align: left;
+}
+
+
+.user_stats {
+  background: linear-gradient(-60deg, #434343, #000000, #0D324D, #7F5A83);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+
+/* Mobile Text Optimization  */
+@media only screen and (max-width: 1200px) {
+  #user_stats_artist_name,
+  #user_stats_other_artist_name {
+    font-size: 25px;
+  }
+
+  #user_stats_artist_text {
+    font-size: 30px;
+
+  }
+
+  #user_stats_main_row {
+    margin-top: 3vh;
+  }
+
+  #user_stats_favorite_img {
+    width: 250px;
+    height: auto;
+  }
+
+  #user_stats_title {
+    padding-top: 2vh;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 800;
+    font-size: 35px;
+    margin: 0 auto;
+  }
+  
+}

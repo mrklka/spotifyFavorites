@@ -1,0 +1,24 @@
+{/* <div className="row d-flex justify-content-center" id="user_stats_artist_cont" >
+                                <div>
+                                    <h1 id="user_stats_artist_name">Joni Mitchell</h1>
+                                    <h1 id="user_stats_album_title">California</h1>
+                                </div>
+                            </div>
+                            <div className="row d-flex justify-content-center" id="user_stats_artist_cont" >
+                                <div>
+                                    <h1 id="user_stats_artist_name">Joni Mitchell</h1>
+                                    <h1 id="user_stats_album_title">California</h1>
+                                </div>
+                            </div>
+                            <div className="row d-flex justify-content-center" id="user_stats_artist_cont" >
+                                <div>
+                                    <h1 id="user_stats_artist_name">Joni Mitchell</h1>
+                                    <h1 id="user_stats_album_title">California</h1>
+                                </div>
+                            </div>
+                            <div className="row d-flex justify-content-center" id="user_stats_artist_cont" >
+                                <div>
+                                    <h1 id="user_stats_artist_name">Joni Mitchell</h1>
+                                    <h1 id="user_stats_album_title">California</h1>
+                                </div>
+                            </div> */}
