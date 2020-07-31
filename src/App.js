@@ -5,6 +5,7 @@ import qs from 'query-string';
 import Navbar from "../src/views/partials/navbar"
 import Jumbotron from "../src/views/partials/main-jumbotron"
 import UserStats from "../src/views/user-stats"
+import UserAlbumStats from "../src/views/user-stats-albums"
 
 
 class App extends Component {
@@ -15,10 +16,13 @@ class App extends Component {
     this.state = {
       userData: {},
       filterString: '',
-      artists: []
+      artists: [],
+      tracks: []
     }
 
+
   }
+
 
 
   componentDidMount() {
@@ -37,19 +41,6 @@ class App extends Component {
         }
       }))
 
-    // fetch('https://api.spotify.com/v1/me/playlists', {
-    //   headers: { 'Authorization': 'Bearer ' + accessToken }
-    // }).then(response => response.json())
-    //   .then(data => this.setState({
-    //     playlists: data.items.map(item => {
-    //       console.log(data.items)
-    //       return {
-    //         name: item.name,
-    //         imageUrl: item.images[0].url,
-    //         songs: []
-    //       }
-    //     })
-    //   }))
 
     fetch('https://api.spotify.com/v1/me/top/artists', {
       headers: { 'Authorization': 'Bearer ' + accessToken }
@@ -63,10 +54,25 @@ class App extends Component {
             genre: item.genres[0]
           }
         })
-      }))
+      })).catch(err => console.log(err))
 
-
+    fetch('https://api.spotify.com/v1/me/top/tracks', {
+      headers: { 'Authorization': 'Bearer ' + accessToken }
+    }).then(response => response.json())
+      .then(data => this.setState({
+        tracks: data.items.map(item => {
+          return {
+            name: item.name,
+            album: item.album.name,
+            artists: item.artists[0].name,
+            url: item.external_urls.spotify,
+          }
+        })
+      })).catch(err => console.log(err))
   }
+
+
+
 
   render() {
     return (
@@ -79,6 +85,7 @@ class App extends Component {
           this.state.user ?
             <div>
               <UserStats currentuser={this.state.user.name} artists={this.state.artists} />
+              <UserAlbumStats currentuser={this.state.user.name} tracks={this.state.tracks} />
             </div>
 
 
