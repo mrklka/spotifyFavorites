@@ -11,7 +11,7 @@ export default class Jumbotron extends Component {
                 <div className="jumbotron">
                     <h1 id="jumbotron_sublead" className="display-4">Welcome to</h1>
                     <h1 id="jumbotron_lead" className="display-4">my Spotify Favorites!</h1>
-                    <p id="jumbotron_description" className="lead">View you favorite music and get recommendations!s</p>
+                    <p id="jumbotron_description" className="lead">View your favorite music and get recommendations!</p>
                     <p className="lead">
                         <button onClick={() =>
                             window.location = window.location.href.includes('localhost')

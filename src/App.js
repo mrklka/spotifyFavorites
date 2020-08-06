@@ -6,6 +6,7 @@ import Navbar from "../src/views/partials/navbar"
 import Jumbotron from "../src/views/partials/main-jumbotron"
 import UserStats from "../src/views/user-stats"
 import UserAlbumStats from "../src/views/user-stats-albums"
+import UserRecommendations from "../src/views/user-recommendations"
 
 
 class App extends Component {
@@ -17,7 +18,8 @@ class App extends Component {
       userData: {},
       filterString: '',
       artists: [],
-      tracks: []
+      tracks: [],
+      recommendations: [],
     }
 
 
@@ -51,9 +53,12 @@ class App extends Component {
             name: item.name,
             imageUrl: item.images[0].url,
             url: item.external_urls.spotify,
-            genre: item.genres[0]
+            genre: item.genres[0],
+            id: item.id
           }
+
         })
+
       })).catch(err => console.log(err))
 
     fetch('https://api.spotify.com/v1/me/top/tracks', {
@@ -61,6 +66,7 @@ class App extends Component {
     }).then(response => response.json())
       .then(data => this.setState({
         tracks: data.items.map(item => {
+
           return {
             name: item.name,
             album: item.album.name,
@@ -69,7 +75,14 @@ class App extends Component {
           }
         })
       })).catch(err => console.log(err))
+
+
+
+
+
+
   }
+
 
 
 
@@ -86,6 +99,8 @@ class App extends Component {
             <div>
               <UserStats currentuser={this.state.user.name} artists={this.state.artists} />
               <UserAlbumStats currentuser={this.state.user.name} tracks={this.state.tracks} />
+              <UserRecommendations artists={this.state.artists} />
+
             </div>
 
 
